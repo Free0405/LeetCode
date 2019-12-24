@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\ConvertZ.cs" />
     <Compile Include="Algorithm\Coverse.cs" />
+    <Compile Include="Algorithm\FundationFunction.cs" />
     <Compile Include="Algorithm\IsPossibleDivide.cs" />
     <Compile Include="Algorithm\Palindrome.cs" />
     <Compile Include="Program.cs" />

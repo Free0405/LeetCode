@@ -10,8 +10,7 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            int[] nums = new int[] { 1, 2, 3, 3, 4, 4, 5, 6 };
-            Algorithm.IsPossibleDivide.judgeNumber(nums, 4);
+           
         }
     }
 }

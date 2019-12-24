@@ -18,18 +18,38 @@ namespace LeetCode
             skinComboBox1.Items.Add("最长回文子串");
             skinComboBox1.Items.Add("整数反转");
             skinComboBox1.Items.Add("Z字形变换");
+            skinComboBox1.Items.Add("划分数组为连续数字的集合");
             skinComboBox1.SelectedIndex = 0;
         }
 
         private void skinComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (skinComboBox1.Text == "最长回文子串")
+            {
+                string example = "babababac";
+                textBox1.Text = example;
+            }
+            else if (skinComboBox1.Text == "整数反转")
+            {
+                string example = "123";
+                textBox1.Text = example;
+            }
+            else if (skinComboBox1.Text == "Z字形变换")
+            {
+                string example = "FREEANDMEOW";
+                textBox1.Text = example;
+            }
+            else if (skinComboBox1.Text == "划分数组为连续数字的集合")
+            {
+                int[] nums = new int[] { 1, 2, 3, 3, 4, 4, 5, 6 };
+                string numsString = nums.ToString();
+                textBox1.Text = numsString;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int[] nums = new int[] { 1, 2, 3, 3, 4, 4, 5, 6 };
-            Algorithm.Algorithm.IsPossibleDivide.judgeNumber(nums, 4);
+
             DateTime dt1 = System.DateTime.Now;
             if (skinComboBox1.Text == "最长回文子串")
             {
@@ -38,9 +58,21 @@ namespace LeetCode
                 textBox2.Text = result;
             }
             else if (skinComboBox1.Text == "整数反转")
-            { }
+            {
+                int value = Convert.ToInt32(textBox1.Text);
+                int result = Algorithm.Algorithm.Coverse.Reverse(value);
+                textBox2.Text = Convert.ToString(result);
+            }
             else if (skinComboBox1.Text == "Z字形变换")
-            { }
+            {
+                string value = textBox1.Text;
+                string result = Algorithm.Algorithm.ConvertZ.Convert(value, 3);
+                textBox2.Text = result;
+            }
+            else if (skinComboBox1.Text == "划分数组为连续数字的集合")
+            {
+
+            }
             DateTime dt2 = System.DateTime.Now;
             TimeSpan ts = dt2.Subtract(dt1);
             textBox3.Text = ts.TotalMilliseconds.ToString();
@@ -50,12 +82,14 @@ namespace LeetCode
         {
             if (skinComboBox1.Text == "最长回文子串")
             {
-                string _string = getString(10);
-                textBox1.Text = _string;
+                //string _string = getString(10);
+                //textBox1.Text = _string;
             }
             else if (skinComboBox1.Text == "整数反转")
             { }
             else if (skinComboBox1.Text == "Z字形变换")
+            { }
+            else if (skinComboBox1.Text == "划分数组为连续数字的集合")
             { }
         }
         string getString(int count)
